@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { PreloadAllModules, RouterModule } from '@angular/router';
+import { CardComponent } from 'src/routes/card/card.component';
+import { HomeComponent } from 'src/routes/home/home.component';
+import { NavbarComponent } from 'src/shared/component/navbar/navbar.component';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(ROUTES,{preloadingStrategy: PreloadAllModules})
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@ import { HomeComponent } from 'src/routes/home/home.component';
 
 export const ROUTES: Routes = [
     {path:'', component:HomeComponent},
-    {path:'card', component:CardsComponent},
+    {path:'game', component:CardsComponent},
     {path:'**', redirectTo:''},
 
 ];

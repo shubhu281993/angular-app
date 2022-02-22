@@ -1,8 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { CardComponent } from 'src/routes/card/card.component';
+import { CardsComponent } from 'src/routes/cards/cards.component';
 import { HomeComponent } from 'src/routes/home/home.component';
+import { CardComponent } from 'src/shared/component/card/card.component';
 import { NavbarComponent } from 'src/shared/component/navbar/navbar.component';
 
 import { AppComponent } from './app.component';
@@ -13,11 +16,15 @@ import { ROUTES } from './app.routes';
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    CardsComponent,
     CardComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES,{preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(ROUTES,{preloadingStrategy: PreloadAllModules}),
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

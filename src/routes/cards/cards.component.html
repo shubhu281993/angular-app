@@ -1,0 +1,23 @@
+<div class="deck">
+    <h1>Card Deck in JavaScript</h1>
+    
+    <p class='description'>
+   For the full walkthrough implementation, check out the complete blog post at <a href='https://www.thatsoftwaredude.com/content/6196/coding-a-card-deck-in-javascript' target='_blank'>thatsoftwaredude.com</a>.
+    </p>
+    
+      <div id="deck">
+          <label for="type">No of Cards</label>
+          <input type="text" class="form-control" name="noOfCards" [(ngModel)]="noOfCards" required>
+      </div>
+      <div>
+        <a (click)="shuffle()" class="btn"><span class="fas fa-random fa-fw"></span> Shuffle</a>
+        <a (click)="sortCards()" class="btn"><span class="fas fa-random fa-fw"></span> Sort Cards</a>
+      </div>
+      <div class="deck" style="display: flex;justify-content: center;">
+        <div *ngFor="let card of cards">
+          <app-card title={{card}}></app-card>
+        </div>
+      </div>
+     
+      
+  </div>

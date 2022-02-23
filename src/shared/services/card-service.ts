@@ -11,12 +11,12 @@ export class CardService{
         })
       }  
     getSuffledCards(noOfCards:number) : Observable<string[]>{
-        const url = `https://localhost:7069/api/Card?noOfCards=${noOfCards}`;
+        const url = `http://cardgameapp.centralus.cloudapp.azure.com/API/api/Card?noOfCards=${noOfCards}`;
         return this.http.get<string[]>(url);
     }
 
     getSortedCards(cards:any) : Observable<string[]>{
-        const url = `https://localhost:7069/api/Card`;
+        const url = `http://cardgameapp.centralus.cloudapp.azure.com/API/api/Card`;
         return this.http.post<string[]>(url, JSON.stringify(cards), this.httpOptions);
     }
 }

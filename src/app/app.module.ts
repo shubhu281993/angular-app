@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { HotToastModule } from '@ngneat/hot-toast';
-import { NotifierModule } from 'angular-notifier';
 import { CardsComponent } from 'src/routes/cards/cards.component';
 import { HomeComponent } from 'src/routes/home/home.component';
 import { CardComponent } from 'src/shared/component/card/card.component';

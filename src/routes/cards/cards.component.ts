@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HotToastService } from "@ngneat/hot-toast";
 import { CardService } from "src/shared/services/card-service";
 
 @Component({
@@ -11,12 +12,14 @@ export class CardsComponent{
 
     noOfCards:string ="";
     cards:string[] = [];
-    
  constructor(
-     private cardService: CardService
- ){}
+     private cardService: CardService,
+     private toast: HotToastService
+ ){
+ }
  
  public shuffle(){
+     if(this.noOfCards !== ''){
         this.cardService
         .getSuffledCards(Number(this.noOfCards))
         .subscribe(
@@ -40,12 +43,18 @@ export class CardsComponent{
                     }
                 });
                 this.cards = cards
+                this.toast.success('Cards shuffled successfully');
             }
         )
+     }
+     else{
+         this.cards = [];
+         this.toast.error("Kindly enter no of cards")
+     }
     }
 
     public sortCards(){
-
+if(this.cards.length >0){
         this.cards.forEach((element,i) => {
             if(element.includes('◆')){
                 element = element.replace(/◆/g,'D');
@@ -86,8 +95,13 @@ export class CardsComponent{
                         cards[i] = element;
                     }
                 });
-                this.cards = cards
+                this.cards = cards;
+                this.toast.success('Cards sorted successfully');
             }
         )
+}
+else{
+    this.toast.error("Kindly shuffle the cards");
+}
     }
 }

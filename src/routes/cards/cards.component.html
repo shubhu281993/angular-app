@@ -1,10 +1,14 @@
 <div class="deck">
-    <h1>Card Deck </h1>
+    <h1>Card Game </h1>
   
     
-      <div id="deck" style="display: flex;">
-          <label style="width: 20%;" for="type">No of Cards</label>
+      <div class="row" id="deck" style="display: flex;">
+        <div class="col-md-2" style="padding: 10px;">
+          <label  for="noOfCards">No of Cards:</label>
+        </div>
+        <div class="col-md-8">
           <input type="text" class="form-control" name="noOfCards" [(ngModel)]="noOfCards" required>
+        </div>
       </div>
       <div>
         <a (click)="shuffle()" class="btn"><span class="fas fa-random fa-fw"></span> Shuffle</a>

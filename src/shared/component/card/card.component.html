@@ -1,5 +1,5 @@
-<div class="card">
-<h4>{{title}}</h4>
-<br>
-<h4 style="float: right;">{{title}}</h4>
+<div class="card" *ngIf="show">
+  <h4 [ngStyle]="{'color':red === true ? 'red' : 'black' }">{{ title }}</h4>
+  <br />
+  <h4 [ngStyle]="{'color':red === true ? 'red' : 'black' }" style="float: right">{{ title }}</h4>
 </div>
